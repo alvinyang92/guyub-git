@@ -1,0 +1,306 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+  @font-face {
+    font-family: 'AvenirNext';
+    src: url('../../assets/fonts/AvenirNext-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'AvenirNext';
+    src: url('../../assets/fonts/AvenirNext-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'AvenirNext';
+    src: url('../../assets/fonts/AvenirNext-DemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: 'AvenirNext';
+    src: url('../../assets/fonts/AvenirNext-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  *{
+    @apply antialiased ring-transparent;
+  }
+
+  html, body {
+    font-family: 'AvenirNext', sans-serif;  
+    @apply h-full m-0 p-0 xll:text-[14px] text-base text-guyub-black ;
+  }
+
+  img{
+    @apply w-full;
+  }
+
+  h1{
+      @apply text-5xl lg:text-4xl xs:text-3xl text-guyub-black font-bold  ;
+  }
+
+  h2{
+      @apply text-4xl text-guyub-black font-bold;
+  }
+
+  h3{
+    @apply text-3xl lg:text-2xl text-guyub-black font-bold ;
+  }
+
+  h4{
+    @apply text-[28px] xll:text-[20px] leading-8 text-guyub-black font-bold ;
+
+  }
+
+  h5{
+    @apply text-xl text-guyub-black font-bold ;
+  }
+
+  h6{
+    @apply text-lg text-guyub-black font-bold ;
+  }
+
+  button, [role="button"] {
+    outline: none;
+  }
+
+  button:focus {
+    outline:0;
+  }
+
+  .section-title{
+      @apply text-2xl xll:text-[20px] xs:text-lg font-semibold;
+  }
+
+  .section-title-home{
+    @apply text-2xl xll:text-[20px] xs:text-lg font-bold;
+}
+  
+  q{
+    @apply text-lg font-normal;
+  }
+
+  a{
+    @apply cursor-pointer;
+  }
+
+  [x-cloak] { 
+    display: none !important;
+    @apply !overflow-hidden; 
+  }
+
+  .tab {
+    @apply px-3 py-2 font-medium bg-gray-100 rounded-full;
+  }
+
+  .tab-cal {
+    @apply w-10 bg-gray-100 rounded-lg flex items-center justify-center font-medium;
+  }
+
+  .tab-small {
+    @apply px-3 py-2 font-medium text-white rounded-full;
+  }
+
+  .tab-small-pop {
+    @apply px-3 py-2 font-medium  ;
+  }
+
+  .tab-small-2 {
+    @apply px-3 py-2 font-medium text-guyub-black rounded-full;
+  }
+
+  .tab-detail {
+    @apply px-3 py-2 font-medium border-b-[0.5px] border-gray-500 ;
+  }
+
+  .tab-black-detail {
+    @apply py-2 font-medium border-b-[0.5px] border-gray-500 ;
+  }
+
+  .translate-50{
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  /* transform: translateX(-50%);
+  transform: translateY(-50%); */
+  }
+
+  .absolute-middle{
+    @apply absolute left-1/2 top-1/2 translate-50 bottom-0;
+  }
+
+  .absolute-m-form{
+    transform: translate(-50%, -50%);
+    position: absolute;
+    left: 50%;
+    bottom: -43px;
+  }
+
+  .img-position-50 {
+    background-position: 50% 50%;
+    background-size: cover;
+  }
+
+
+input:focus { 
+  outline: none !important;
+}
+
+textarea:focus { 
+  outline: none !important;
+}
+
+input[type="checkbox"]:focus{
+  outline:0;
+}
+/*end base*/
+}
+
+/*components*/
+@layer components {
+
+  /*start button*/
+ 
+
+  .btn {
+    @apply relative items-center justify-center inline-block font-medium text-center rounded-lg py-3 px-5 ;
+    }
+
+    .btn-small {
+      @apply relative items-center justify-center inline-block font-medium text-center rounded-lg py-2 px-4 ;
+      }
+
+    .btn-subscribe{
+      @apply relative items-center justify-center inline-block font-medium text-center rounded-lg py-2 px-3;
+    }
+
+  /*end button*/
+
+  input[type=range]::-webkit-slider-thumb {
+    pointer-events: all;
+    width: 24px;
+    height: 24px;
+    -webkit-appearance: none;
+    /* @apply w-6 h-6 appearance-none pointer-events-auto; */
+}
+
+input[type=text]:focus {
+  border: 0px solid #333;
+}
+  
+
+  .hamburger {
+    @apply hidden;
+  }
+
+  .bar {
+    @apply block w-[25px] h-[2px] my-[4px] mx-auto bg-black;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(4px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  /* end hamburger button  */
+
+
+  /* start nav menu */
+  /* top */
+/* Style the active class (and buttons on mouse-over) */
+
+
+  .nav-menu.active {
+    @apply transform translate-y-0;
+  }
+
+  .nav-active-blue{
+    @apply text-guyub-green underline font-semibold;
+}
+
+  .openPopup {
+    @apply !fixed h-0 ;
+  }
+
+  .openPopupblack {
+    @apply !fixed h-0 ;
+  }
+
+  .excerpt-hidden {
+    @apply overflow-hidden relative h-[300px];
+  }
+  .excerpt-hidden:after {
+    @apply absolute bottom-0 left-0 w-full ;
+    content: "";
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.4) 0%, white 100%);
+  }
+  
+  .excerpt-visible {
+    @apply h-auto overflow-auto;
+  }
+
+  /* start tab */ 
+  .tabcontent {
+    @apply hidden;
+  }
+
+  .tabcontent.active {
+    @apply block;
+  }
+
+  .overlay {
+    @apply fixed z-50  inset-0 flex items-center justify-center text-left bg-black bg-opacity-50; 
+  }
+
+  /* start owl  */
+  #owl-inline.owl-carousel .owl-stage{
+    @apply inline  md:block;
+  }
+  
+  .nav-active{
+    @apply hidden;
+  }
+
+
+  
+
+  
+
+  /* prose li > ol > li{
+    padding:0px;
+      margin-left: 1.25em;
+  } 
+  .prose li > ol > li::before{
+    display: none;
+  } 
+  .prose .indent::before{
+    display: none;
+  } */
+/* component end*/
+}
